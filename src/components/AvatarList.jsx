@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AvatarCard from './AvatarCard';
-import AvatarCardSkeleton from './AvatarCardSkeleton'; // Import the skeleton component
+import AvatarCardSkeleton from './AvatarCardSkeleton'; 
 
 const AvatarList = () => {
   const [avatars, setAvatars] = useState([]);
@@ -9,7 +9,6 @@ const AvatarList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate a longer fetch for demonstration purposes
     setTimeout(() => {
       fetch('https://dummyjson.com/users')
         .then((response) => {
@@ -19,8 +18,6 @@ const AvatarList = () => {
           return response.json();
         })
         .then((data) => {
-          // Filter out users who might be missing critical data like an image or name if necessary
-          // For now, we assume all user objects from dummyjson are fine
           setAvatars(data.users || []);
           setLoading(false);
         })
@@ -28,7 +25,7 @@ const AvatarList = () => {
           setError(err.message);
           setLoading(false);
         });
-    }, 1500); // Simulated delay of 1.5 seconds
+    }, 1500);
   }, []);
 
   if (loading) {
@@ -46,7 +43,6 @@ const AvatarList = () => {
       <div className="text-center py-10">
         <p className="text-xl text-red-400 mb-2">Oops! Something went wrong.</p>
         <p className="text-custom-text-secondary">{error}</p>
-        {/* You could add a retry button here */}
       </div>
     );
   }

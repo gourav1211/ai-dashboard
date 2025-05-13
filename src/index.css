@@ -10,13 +10,11 @@
 }
 
 body {
-  /* Tailwind v4 will automatically create utilities like bg-custom-dark from the CSS variables */
   @apply bg-custom-dark text-custom-text-primary;
   font-family: /* Add your preferred sans-serif font stack here, e.g., Inter, system-ui, sans-serif */
     system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-/* Adding a class to ensure the whole app uses dark mode by default */
 html.dark {
   color-scheme: dark;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <header className="bg-custom-surface shadow-md">
+    <header className="bg-custom-surface shadow-md sticky top-0">
       <div className="container mx-auto px-4 py-5 flex justify-between items-center">
         <h1 className="text-3xl font-bold text-custom-text-primary">
           AI Dashboard
